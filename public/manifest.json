@@ -1,0 +1,9 @@
+{
+    "name": "Budget-Tracker",
+    "short_name": "keep",
+    "icons": "image/png",
+    "theme_color": "green",
+    "background_color": "white",
+    "start_url": "./api",
+    "display": "tbd"
+}
