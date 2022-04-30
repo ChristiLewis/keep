@@ -1,9 +1,9 @@
 {
-    "name": "Budget-Tracker",
+    "name": "Keep-Budget",
     "short_name": "keep",
     "icons": "image/png",
     "theme_color": "green",
     "background_color": "white",
-    "start_url": "./api",
+    "start_url": "/",
     "display": "tbd"
 }

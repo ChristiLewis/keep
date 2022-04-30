@@ -1,11 +1,12 @@
-const APP_PREFIX = 'Keep-';
+const APP_PREFIX = 'Keep-Budget-';
 const VERSION = 'version_01';
 const CACHE_NAME = APP_PREFIX + VERSION;
 
 const FILES_TO_CACHE = [
+    "/",
     "./index.html",
     "./manifest.json",
-    "./css/style.css",
+    "./css/styles.css",
     "./icons/icon-72x72.png",
     "./icons/icon-96x96.png",
     "./icons/icon-128x128.png",
@@ -33,13 +34,13 @@ self.addEventListener('install', function (e) {
 self.addEventListener('activate', function (e) {
     e.waitUntil(
         caches.keys().then(function (keyList) {
-            let cacheKeeplist = keyList.filter(function (key) {
+            let cacheKeepList = keyList.filter(function (key) {
                 return key.indexOf(APP_PREFIX);
             });
-            cacheKeeplist.push(CACHE_NAME);
+            cacheKeepList.push(CACHE_NAME);
 
             return Promise.all(keyList.map(function (key, i) {
-                if (cacheKeeplist.indexOf(key) === -1) {
+                if (cacheKeepList.indexOf(key) === -1) {
                     console.log('deleting cache : ' + keyList[i]);
                     return caches.delete(keyList[i]);
                 }
