@@ -55,7 +55,7 @@ function uploadBudget() {
     getAll.onsuccess = function () {
         //SEND LOCALLY STORED DATA FROM INDEXEDDB'S STORE TO THE API'S SERVER USING A FETCH()
         if (getAll.result.length > 0) {
-            fetch('/api/transaction/bulk', {
+            fetch('/api/transactions/bulk', {
                 method: 'POST',
                 body: JSON.stringify(getAll.result),
                 headers: {
