@@ -1,4 +1,4 @@
-module.exports + {
+module.exports = {
     Transaction: require("./Transaction")
 }
 // const Transaction = require('./Transaction');
