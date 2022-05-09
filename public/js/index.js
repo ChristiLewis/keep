@@ -125,7 +125,7 @@ function sendTransaction(isAdding) {
     }
   })
     .then(response => {
-      return response.json() 
+      return response.json()
     })
     .then(data => {
       if (data.errors) {
