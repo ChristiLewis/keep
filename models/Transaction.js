@@ -1,8 +1,10 @@
-const mongoose = require("mongoose");
+const { Schema, model } = require("mongoose");
+//IMPORT FOR GETTER FUNCTIONALITY
+// const dateFormat = require('../utils/dateFormat');
 
-const Schema = mongoose.Schema;
+// const Schema = mongoose.Schema;
 
-const transactionSchema = new Schema(
+const TransactionSchema = new Schema(
     {
         name: {
             type: String,
@@ -15,11 +17,20 @@ const transactionSchema = new Schema(
         },
         date: {
             type: Date,
-            default: Date.now
+            default: Date.now,
+            // get: createdAtVal => dateFormat(createdAtVal)
         }
     }
+    // {
+    //     toJSON: {
+    //         virtuals: true,
+    //         getters: true
+    //     },
+    //     //MONGOOSE RETURNS THIS VIRTUAL SO THE ID IS NA
+    //     id: false
+    // }
 );
 
-const Transaction = mongoose.model("Transaction", transactionSchema);
+const Transaction = model('Transaction', TransactionSchema);
 
 module.exports = Transaction;

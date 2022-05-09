@@ -1,4 +1,4 @@
-const APP_PREFIX = 'Keep-';
+const APP_PREFIX = 'keep-';
 const VERSION = 'version_01';
 const CACHE_NAME = APP_PREFIX + VERSION;
 
