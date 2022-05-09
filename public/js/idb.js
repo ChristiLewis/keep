@@ -1,7 +1,7 @@
 //CREATE A VAR TO HOLD THE DB CONNECTION
 let db;
 //ESTABLISH A CONNECTION TO INDEXEDDB CALLED 'KEEP_BUDGET' AND SET TO VERSION 1
-const request = indexedDB.open('keep_budget', 1);
+const request = indexedDB.open('keep_budget', 2);
 
 //THIS EVENT WILL EMIT IF THE DB VERSION CHANGES
 request.onupgradeneeded = function (event) {
@@ -69,7 +69,7 @@ function uploadBudget() {
                         throw new Error(serverResponse);
                     }
                     //OPEN ONE MORE TRANSACTION
-                    const transaction = db.transaction(['new_transaction'], 'readwrite');
+                    const transaction = db.transaction(['new_budget'], 'readwrite');
                     const budgetObjectStore = transaction.objectStore('new_budget');
                     //CLEAR-OUT STORE
                     budgetObjectStore.clear();
