@@ -145,6 +145,16 @@ function sendTransaction(isAdding) {
     });
 }
 
+function sendAlert(amountEl.value) {
+  if (amountEl.value <= 0) {
+    window.alert("You have added an expense!");
+    break;
+  } else {
+    window.alert('You have made a deposit!');
+    break;
+  }
+}
+
 document.querySelector("#add-btn").onclick = function () {
   sendTransaction(true);
 };
