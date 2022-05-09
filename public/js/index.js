@@ -101,7 +101,10 @@ function sendTransaction(isAdding) {
 
   // if subtracting funds, convert amount to negative number
   if (!isAdding) {
+    window.alert('You have added an expense');
     transaction.value *= -1;
+  } else {
+    window.alert('You have made a deposit');
   }
 
   // add to beginning of current array of data
@@ -122,7 +125,7 @@ function sendTransaction(isAdding) {
     }
   })
     .then(response => {
-      return response.json();
+      return response.json() 
     })
     .then(data => {
       if (data.errors) {
@@ -145,17 +148,17 @@ function sendTransaction(isAdding) {
     });
 }
 
-function sendAlert(transaction) {
-  if (transaction < 0) {
-    window.alert("You have added an expense!");
-    return;
-  } else {
-    window.alert('You have made a deposit!');
-    return;
-  }
-}
+// function sendAlert(transaction) {
+//   if (transaction < 0) {
+//     window.alert("You have added an expense!");
+//     return;
+//   } else {
+//     window.alert('You have made a deposit!');
+//     return;
+//   }
+// }
 
-sendAlert();
+// sendAlert();
 
 document.querySelector("#add-btn").onclick = function () {
   sendTransaction(true);
