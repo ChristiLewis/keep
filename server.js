@@ -19,9 +19,12 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect(MONGODB_URI, {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/budget', {
+   /** useNewUrlParser false by default. Set to `true` to make all connections set the `useUnifiedTopology` option by default */
   useNewUrlParser: true,
-  useFindAndModify: false
+    /** Set use FindAndModify to `true` to make Mongoose automatically call `createCollection()` on every model created on this connection. */
+  useFindAndModify: false,
+  useUnifiedTopology: true
 });
 
 // routes
