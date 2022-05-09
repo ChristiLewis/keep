@@ -155,6 +155,8 @@ function sendAlert(amountEl.value) {
   }
 }
 
+sendAlert();
+
 document.querySelector("#add-btn").onclick = function () {
   sendTransaction(true);
 };
