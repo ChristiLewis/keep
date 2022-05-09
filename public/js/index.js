@@ -145,13 +145,13 @@ function sendTransaction(isAdding) {
     });
 }
 
-function sendAlert(amountEl.value) {
-  if (amountEl.value <= 0) {
+function sendAlert(transaction) {
+  if (transaction < 0) {
     window.alert("You have added an expense!");
-    break;
+    return;
   } else {
     window.alert('You have made a deposit!');
-    break;
+    return;
   }
 }
 
